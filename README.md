@@ -3,7 +3,8 @@
 > **Disease-to-Molecule Discovery & Biological Intelligence Platform**  
 > Unified translational bioinformatics architecture connecting target discovery, *de novo* generative chemistry, neural property prediction, 3D molecular docking, ADMET pharmacokinetics, and experimental bioactivity benchmarks.
 >
-> 📖 **[Read the Full User Guide (PDF)](HumanMol_AI_User_Guide.pdf)**
+> 📘 **[Beginner's & Non-Biologist Visual Guide (PDF)](HumanMol_AI_Beginners_Guide.pdf)** — *Step-by-step illustrated manual with plain English definitions, analogies, and click-by-click instructions.*  
+> 📖 **[Platform User Guide & Operational Manual (PDF)](HumanMol_AI_User_Guide.pdf)** — *Technical reference for researchers, data models, and deployment configurations.*
 
 ---
 
