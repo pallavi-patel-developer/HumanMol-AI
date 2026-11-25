@@ -117,8 +117,8 @@ export default function Dashboard() {
               [74]
             </span>
             <span className="border-t border-slate-200 w-full my-2.5" />
-            <span className="text-[10px] font-bold text-emerald-600 uppercase flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            <span className="text-[10px] font-bold text-blue-600 uppercase flex items-center gap-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
               STATUS: NOMINAL
             </span>
           </div>
@@ -254,8 +254,8 @@ export default function Dashboard() {
         </div>
 
         {error && (
-          <div className="p-4 rounded-xl border border-rose-200 bg-rose-50 text-rose-800 text-xs flex items-center gap-3">
-            <AlertTriangle className="w-5 h-5 flex-shrink-0 text-rose-600" />
+          <div className="p-4 rounded-xl border border-slate-300 bg-slate-100 text-slate-900 text-xs flex items-center gap-3">
+            <AlertTriangle className="w-5 h-5 flex-shrink-0 text-blue-600" />
             <div>
               <span className="font-bold uppercase block">FAULT DETECTED:</span>
               <span>{error}</span>
@@ -268,7 +268,7 @@ export default function Dashboard() {
           <div className="space-y-6 pt-4 border-t border-slate-100">
             <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200/70">
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0" />
                 <div>
                   <h3 className="text-xs font-bold uppercase text-slate-900">
                     PIPELINE BATCH COMPLETE // TARGET: {pipelineResult.target_name}
@@ -327,8 +327,8 @@ export default function Dashboard() {
                         <span
                           className={`text-[10px] px-2 py-0.5 rounded-full font-semibold ${
                             cand.lipinski_ro5
-                              ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                              : 'bg-rose-50 text-rose-700 border border-rose-200'
+                              ? 'bg-blue-50 text-blue-700 border border-blue-200'
+                              : 'bg-slate-100 text-slate-800 border border-slate-300'
                           }`}
                         >
                           {cand.lipinski_ro5 ? 'PASS' : 'VIOLATION'}
@@ -338,7 +338,7 @@ export default function Dashboard() {
                         {cand.chemprop_status === 'NOT_RUN' ? (
                           <span className="text-[11px] text-slate-400">NOT RUN</span>
                         ) : cand.chemprop_status === 'FAILED' ? (
-                          <span className="text-[10px] text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full font-semibold border border-rose-200" title={cand.chemprop_error || 'Prediction failed'}>FAILED</span>
+                          <span className="text-[10px] text-slate-900 bg-slate-100 px-2 py-0.5 rounded-full font-semibold border border-slate-300" title={cand.chemprop_error || 'Prediction failed'}>FAILED</span>
                         ) : cand.chemprop_predicted_property != null ? (
                           cand.chemprop_predicted_property.toFixed(4)
                         ) : (
@@ -349,7 +349,7 @@ export default function Dashboard() {
                         {cand.docking_status === 'NOT_RUN' ? (
                           <span className="text-[11px] text-slate-400">NOT RUN</span>
                         ) : cand.docking_status === 'FAILED' ? (
-                          <span className="text-[10px] text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full font-semibold border border-rose-200" title={cand.docking_error || 'Docking failed'}>FAILED</span>
+                          <span className="text-[10px] text-slate-900 bg-slate-100 px-2 py-0.5 rounded-full font-semibold border border-slate-300" title={cand.docking_error || 'Docking failed'}>FAILED</span>
                         ) : cand.docking_best_affinity != null ? (
                           `${cand.docking_best_affinity.toFixed(1)} kcal/mol`
                         ) : (
@@ -360,7 +360,7 @@ export default function Dashboard() {
                         {cand.admet_status === 'NOT_RUN' ? (
                           <span className="text-[11px] text-slate-400">NOT RUN</span>
                         ) : cand.admet_status === 'FAILED' ? (
-                          <span className="text-[10px] text-rose-600 bg-rose-50 px-2 py-0.5 rounded-full font-semibold border border-rose-200" title={cand.admet_error || 'Profiling failed'}>FAILED</span>
+                          <span className="text-[10px] text-slate-900 bg-slate-100 px-2 py-0.5 rounded-full font-semibold border border-slate-300" title={cand.admet_error || 'Profiling failed'}>FAILED</span>
                         ) : (cand.admet_herg != null || cand.admet_dili != null) ? (
                           `HERG: ${cand.admet_herg != null ? cand.admet_herg.toFixed(2) : '—'} | DILI: ${cand.admet_dili != null ? cand.admet_dili.toFixed(2) : '—'}`
                         ) : (

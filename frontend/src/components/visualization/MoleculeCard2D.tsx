@@ -69,18 +69,18 @@ export const MoleculeCard2D: React.FC<Props> = ({
           <span
             className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold ${
               lipinskiRo5
-                ? 'bg-emerald-50 text-emerald-700 border border-emerald-200/70'
-                : 'bg-rose-50 text-rose-700 border border-rose-200/70'
+                ? 'bg-blue-50 text-blue-700 border border-blue-200/80'
+                : 'bg-slate-100 text-slate-800 border border-slate-300'
             }`}
           >
             {lipinskiRo5 ? (
               <>
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                <ShieldCheck className="w-3.5 h-3.5 text-blue-600" />
                 RO5 PASS
               </>
             ) : (
               <>
-                <ShieldAlert className="w-3.5 h-3.5 text-rose-600" />
+                <ShieldAlert className="w-3.5 h-3.5 text-slate-600" />
                 RO5 VIOLATION
               </>
             )}
@@ -98,7 +98,7 @@ export const MoleculeCard2D: React.FC<Props> = ({
           title="Copy SMILES string"
           className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-600 transition-all shadow-xs cursor-pointer"
         >
-          {copied ? <Check className="w-3.5 h-3.5 text-emerald-600 font-bold" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
+          {copied ? <Check className="w-3.5 h-3.5 text-blue-600 font-bold" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
         </button>
       </div>
 

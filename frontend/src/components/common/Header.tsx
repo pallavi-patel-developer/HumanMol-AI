@@ -36,19 +36,19 @@ export const Header: React.FC = () => {
       {/* Top subtle micro metadata bar */}
       <div className="border-b border-slate-100 px-6 py-1 text-[11px] font-sans font-medium text-slate-500 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <span className="font-semibold text-slate-700">SPEC-REF: HM-BIO-2026</span>
-          <span className="hidden md:inline text-slate-400">•</span>
-          <span className="hidden md:inline text-slate-500">SYSTEM: REINVENT4 // CHEMPROP // VINA // ADMETLAB</span>
-          <span className="hidden lg:inline text-slate-400">•</span>
-          <span className="hidden lg:inline text-slate-500">NODE: CIVILIAN TIER // 0.243</span>
+          <span className="font-semibold text-slate-800">SPEC-REF: HM-BIO-2026</span>
+          <span className="hidden md:inline text-slate-300">•</span>
+          <span className="hidden md:inline text-slate-600">SYSTEM: REINVENT4 // CHEMPROP // VINA // ADMETLAB</span>
+          <span className="hidden lg:inline text-slate-300">•</span>
+          <span className="hidden lg:inline text-slate-600">NODE: CIVILIAN TIER // 0.243</span>
         </div>
         <div className="flex items-center gap-3">
           <span className="flex items-center gap-1.5 text-xs">
-            <span className={`inline-block w-2 h-2 rounded-full ${health?.status === 'healthy' ? 'bg-emerald-500' : 'bg-rose-500 animate-pulse'}`} />
-            <span className="font-semibold text-slate-700">ENGINE CORE: {health?.status === 'healthy' ? 'ACTIVE' : 'STANDBY'}</span>
+            <span className={`inline-block w-2 h-2 rounded-full ${health?.status === 'healthy' ? 'bg-blue-600' : 'bg-slate-400'}`} />
+            <span className="font-semibold text-slate-800">ENGINE CORE: {health?.status === 'healthy' ? 'ACTIVE' : 'STANDBY'}</span>
           </span>
           <span className="text-slate-300">|</span>
-          <span className="bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full text-[10px] font-semibold">AUTH: ID-GX7</span>
+          <span className="bg-slate-100 text-slate-800 px-2 py-0.5 rounded-full text-[10px] font-semibold">AUTH: ID-GX7</span>
         </div>
       </div>
 
@@ -78,7 +78,7 @@ export const Header: React.FC = () => {
         <div className="hidden lg:flex items-center gap-3">
           {/* FastAPI Engine Status */}
           <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-slate-50 border border-slate-200/70">
-            <span className={`w-2 h-2 rounded-full ${health?.status === 'healthy' ? 'bg-emerald-500' : 'bg-red-500'}`} />
+            <span className={`w-2 h-2 rounded-full ${health?.status === 'healthy' ? 'bg-blue-600' : 'bg-slate-400'}`} />
             <div className="text-left">
               <div className="text-[10px] font-medium text-slate-400 uppercase tracking-wider">FASTAPI ENGINE</div>
               <div className="text-xs font-semibold text-slate-800">
@@ -111,7 +111,7 @@ export const Header: React.FC = () => {
           </button>
         </div>
 
-        {/* Right: API Spec, Notification Bell & User Avatar (matching reference UI) */}
+        {/* Right: API Spec, Notification Bell & User Avatar */}
         <div className="flex items-center gap-3">
           <a
             href="http://localhost:8000/docs"

@@ -10,10 +10,14 @@
   --card-bg: #FFFFFF;
 }
 
+/* Universal Font Enforcement: -apple-system, BlinkMacSystemFont across entire app */
+*, *::before, *::after, html, body, input, button, select, textarea, table, th, td, span, div, p, h1, h2, h3, h4, h5, h6, a {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -117,8 +121,8 @@ select {
 
 input:focus, textarea:focus, select:focus {
   outline: none !important;
-  border-color: #3B82F6 !important;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15) !important;
+  border-color: #2563EB !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
 }
 
 /* Soft Modern Badges & Overrides */
@@ -130,7 +134,7 @@ input:focus, textarea:focus, select:focus {
   color: #64748B;
 }
 
-/* Comprehensive styling overrides to convert brutalist elements to Valora SaaS style */
+/* Convert all brutalist borders to soft slate borders */
 .border-black {
   border-color: #E2E8F0 !important;
 }
@@ -151,7 +155,54 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.04) !important;
 }
 
-/* Active buttons / primary highlights */
+/* =========================================================================
+   STRICT COLOR ENFORCEMENT: ONLY BLUE (#2563EB), WHITE (#FFFFFF), BLACK/SLATE (#0F172A)
+   Eliminates all green, red, yellow, cyan, purple, and orange across the UI.
+   ========================================================================= */
+
+/* Green / Emerald normalization -> Blue / Slate */
+.bg-emerald-50, .bg-emerald-100, .bg-emerald-200, .bg-\[\#a3e635\] {
+  background-color: #EFF6FF !important; /* Soft Blue */
+  color: #1D4ED8 !important;            /* Dark Blue */
+  border-color: #BFDBFE !important;
+}
+.text-emerald-500, .text-emerald-600, .text-emerald-700, .text-emerald-800 {
+  color: #2563EB !important;            /* Blue */
+}
+.bg-emerald-500, .bg-emerald-600, .bg-emerald-700 {
+  background-color: #2563EB !important; /* Blue */
+}
+
+/* Red / Rose normalization -> Black / Slate */
+.bg-rose-50, .bg-rose-100, .bg-red-50, .bg-red-100, .bg-\[\#f87171\], .bg-\[\#fca5a5\] {
+  background-color: #F1F5F9 !important; /* Slate-100 */
+  color: #0F172A !important;            /* Black */
+  border-color: #CBD5E1 !important;
+}
+.text-rose-400, .text-rose-500, .text-rose-600, .text-rose-700, .text-red-500, .text-red-600 {
+  color: #0F172A !important;            /* Black */
+}
+.bg-rose-500, .bg-red-500, .bg-rose-600, .bg-red-600 {
+  background-color: #0F172A !important; /* Black */
+}
+
+/* Yellow / Neon Yellow / Amber normalization -> Blue / White */
+.bg-swiss-yellow, .bg-yellow-50, .bg-amber-50, .bg-\[\#eeff00\], .bg-\[\#d4e400\], .bg-\[\#FEF3C7\] {
+  background-color: #2563EB !important; /* Blue */
+  color: #FFFFFF !important;            /* White */
+  border-color: #2563EB !important;
+}
+.text-swiss-yellow, .text-yellow-500, .text-yellow-600, .text-amber-500, .text-amber-600 {
+  color: #2563EB !important;            /* Blue */
+}
+
+/* Cyan normalization -> Blue */
+.text-cyan-400, .text-cyan-500, .text-cyan-600, .bg-cyan-50, .bg-cyan-100 {
+  color: #2563EB !important;
+  background-color: #EFF6FF !important;
+}
+
+/* Primary Buttons */
 button.bg-swiss-yellow,
 a.bg-swiss-yellow {
   background-color: #2563EB !important;
