@@ -1,0 +1,89 @@
+{
+  "experiment_id": "exp_1iep_20261121_095014_5ec0b337",
+  "timestamp": "20261121_095014",
+  "target_pdb_id": "1IEP",
+  "target_name": "c-Abl Kinase Domain (PDB: 1IEP)",
+  "mutation": "Wild-Type",
+  "ligand_smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+  "status": "SUCCESS",
+  "best_affinity_kcal_mol": -8.391,
+  "num_modes": 9,
+  "modes": [
+    {
+      "mode": 1,
+      "affinity_kcal_mol": -8.391,
+      "rmsd_lb": 0.0,
+      "rmsd_ub": 0.0
+    },
+    {
+      "mode": 2,
+      "affinity_kcal_mol": -8.186,
+      "rmsd_lb": 4.704,
+      "rmsd_ub": 8.244
+    },
+    {
+      "mode": 3,
+      "affinity_kcal_mol": -8.111,
+      "rmsd_lb": 4.666,
+      "rmsd_ub": 8.921
+    },
+    {
+      "mode": 4,
+      "affinity_kcal_mol": -7.732,
+      "rmsd_lb": 5.442,
+      "rmsd_ub": 8.512
+    },
+    {
+      "mode": 5,
+      "affinity_kcal_mol": -7.626,
+      "rmsd_lb": 5.48,
+      "rmsd_ub": 7.955
+    },
+    {
+      "mode": 6,
+      "affinity_kcal_mol": -7.325,
+      "rmsd_lb": 3.993,
+      "rmsd_ub": 6.573
+    },
+    {
+      "mode": 7,
+      "affinity_kcal_mol": -7.266,
+      "rmsd_lb": 5.707,
+      "rmsd_ub": 8.505
+    },
+    {
+      "mode": 8,
+      "affinity_kcal_mol": -7.154,
+      "rmsd_lb": 5.024,
+      "rmsd_ub": 8.895
+    },
+    {
+      "mode": 9,
+      "affinity_kcal_mol": -7.041,
+      "rmsd_lb": 5.759,
+      "rmsd_ub": 8.553
+    }
+  ],
+  "exit_code": 0,
+  "command": "\"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\vina.exe\" --receptor \"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\1iep_receptor.pdbqt\" --ligand \"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\experiments\\exp_1iep_20261121_095014_5ec0b337\\ligand.pdbqt\" --center_x 15.6 --center_y 53.6 --center_z 15.4 --size_x 20.0 --size_y 20.0 --size_z 20.0 --out \"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\experiments\\exp_1iep_20261121_095014_5ec0b337\\docked_out.pdbqt\" --exhaustiveness 8",
+  "vina_config": {
+    "center": [
+      15.6,
+      53.6,
+      15.4
+    ],
+    "size": [
+      20.0,
+      20.0,
+      20.0
+    ],
+    "exhaustiveness": 8
+  },
+  "output_file": "D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\experiments\\exp_1iep_20261121_095014_5ec0b337\\docked_out.pdbqt",
+  "receptor_path": "D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\1iep_receptor.pdbqt",
+  "ligand_path": "D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\experiments\\exp_1iep_20261121_095014_5ec0b337\\ligand.pdbqt",
+  "receptor_sha256": "f13cf3b36f61d87c3b58983e0b8ecf1c3456a685eb86dfe9ccfb139c7bdc2586",
+  "ligand_sha256": "1da1053f392370b612c6eb727222808be140804600ab32ff79d5eaec42cd4851",
+  "runtime_seconds": 35.73,
+  "is_benchmark": false
+}

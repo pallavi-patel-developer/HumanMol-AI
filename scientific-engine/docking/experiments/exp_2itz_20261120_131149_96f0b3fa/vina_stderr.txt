@@ -1,0 +1,1 @@
+Invalid grid box dimensions: size_x=0.0, size_y=0.0, size_z=0.0. All box sizes must be strictly positive (> 0 Å).

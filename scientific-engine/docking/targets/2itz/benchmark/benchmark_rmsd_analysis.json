@@ -1,0 +1,128 @@
+{
+  "benchmark_title": "EGFR L858R Kinase Domain Crystallographic Redocking Validation",
+  "target_pdb_id": "2ITZ",
+  "gene_symbol": "EGFR",
+  "uniprot_accession": "P00533",
+  "organism": "Homo sapiens",
+  "mutation": "L858R (Leu 858 substituted by Arg 858)",
+  "mutation_verified": true,
+  "experimental_method": "X-RAY DIFFRACTION",
+  "resolution_angstrom": 2.8,
+  "reference_ligand": {
+    "comp_id": "IRE",
+    "name": "Gefitinib (Iressa)",
+    "smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+    "heavy_atom_count": 31,
+    "crystallographic_centroid": [
+      -51.654,
+      -1.266,
+      -21.945
+    ]
+  },
+  "vina_parameters": {
+    "docking_engine": "AutoDock Vina v1.2.7",
+    "center": [
+      -51.654,
+      -1.266,
+      -21.945
+    ],
+    "size": [
+      20.0,
+      20.0,
+      20.0
+    ],
+    "exhaustiveness": 16,
+    "num_modes": 9,
+    "seed": 42
+  },
+  "atom_mapping": {
+    "heavy_atom_count": 31,
+    "polar_hydrogens": 1,
+    "total_pdbqt_atoms": 32,
+    "mapping_discrepancy_angstrom": 0.0,
+    "core_heavy_atom_count": 21,
+    "flexible_tail_heavy_atom_count": 10
+  },
+  "results_summary": {
+    "best_affinity_kcal_mol": -8.36,
+    "mode_1_core_rmsd_angstrom": 0.4596,
+    "mode_1_all_heavy_rmsd_angstrom": 2.6435,
+    "mode_1_symmetry_rmsd_angstrom": 2.115,
+    "best_symmetry_rmsd_angstrom": 1.6782,
+    "best_core_rmsd_angstrom": 0.4094,
+    "verdict": "BENCHMARK_VALIDATED"
+  },
+  "modes": [
+    {
+      "mode": 1,
+      "affinity_kcal_mol": -8.356,
+      "hinge_core_rmsd_angstrom": 0.4596,
+      "all_heavy_cartesian_rmsd_angstrom": 2.6435,
+      "all_heavy_symmetry_corrected_rmsd_angstrom": 2.115
+    },
+    {
+      "mode": 2,
+      "affinity_kcal_mol": -8.245,
+      "hinge_core_rmsd_angstrom": 0.4094,
+      "all_heavy_cartesian_rmsd_angstrom": 2.9558,
+      "all_heavy_symmetry_corrected_rmsd_angstrom": 2.0827
+    },
+    {
+      "mode": 3,
+      "affinity_kcal_mol": -7.94,
+      "hinge_core_rmsd_angstrom": 0.4525,
+      "all_heavy_cartesian_rmsd_angstrom": 2.2967,
+      "all_heavy_symmetry_corrected_rmsd_angstrom": 1.6782
+    },
+    {
+      "mode": 4,
+      "affinity_kcal_mol": -7.755,
+      "hinge_core_rmsd_angstrom": 1.6305,
+      "all_heavy_cartesian_rmsd_angstrom": 2.4719,
+      "all_heavy_symmetry_corrected_rmsd_angstrom": 1.6908
+    },
+    {
+      "mode": 5,
+      "affinity_kcal_mol": -7.662,
+      "hinge_core_rmsd_angstrom": 1.7915,
+      "all_heavy_cartesian_rmsd_angstrom": 3.8288,
+      "all_heavy_symmetry_corrected_rmsd_angstrom": 2.2732
+    },
+    {
+      "mode": 6,
+      "affinity_kcal_mol": -7.593,
+      "hinge_core_rmsd_angstrom": 2.9057,
+      "all_heavy_cartesian_rmsd_angstrom": 5.071,
+      "all_heavy_symmetry_corrected_rmsd_angstrom": 2.3361
+    },
+    {
+      "mode": 7,
+      "affinity_kcal_mol": -7.365,
+      "hinge_core_rmsd_angstrom": 3.5209,
+      "all_heavy_cartesian_rmsd_angstrom": 3.2916,
+      "all_heavy_symmetry_corrected_rmsd_angstrom": 2.8157
+    },
+    {
+      "mode": 8,
+      "affinity_kcal_mol": -7.34,
+      "hinge_core_rmsd_angstrom": 5.531,
+      "all_heavy_cartesian_rmsd_angstrom": 6.0037,
+      "all_heavy_symmetry_corrected_rmsd_angstrom": 2.5904
+    },
+    {
+      "mode": 9,
+      "affinity_kcal_mol": -7.292,
+      "hinge_core_rmsd_angstrom": 8.0933,
+      "all_heavy_cartesian_rmsd_angstrom": 7.4685,
+      "all_heavy_symmetry_corrected_rmsd_angstrom": 2.3796
+    }
+  ],
+  "file_provenance": {
+    "receptor_pdbqt_sha256": "9786ece227e25cb08399259c68f47d49e02feefae321b41d6a195aac85714be2",
+    "original_ligand_crystal_pdb_sha256": "b4af6b611a977157f9364ba6a9778daf554af86ef2aa20fd9ee798d36a1aee05",
+    "original_ligand_prepared_pdbqt_sha256": "edb1849796b2abf4e5f5e8deede520c7830cae1bc337199ca190deaf2e2d28ab",
+    "redocked_modes_pdbqt_sha256": "20d5ca510dda53584867c4d482138eaba6c6b3e42365a75515e930f1e8ff06b7",
+    "vina_config_sha256": "e87b19b3f4ee9a8d2666f7d1afd8c7adb26cbd3a075b37076dfe4c2ad18b1bb9",
+    "vina_stdout_sha256": "57be01ccdb57981f1fee4cd6930573c1c5157a827ffca7ae5d1252e023340799"
+  }
+}

@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+*/node_modules/
+.pnp
+.pnp.js
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# Next.js & Frontend Build Outputs
+.next/
+*/.next/
+out/
+build/
+dist/
+*.egg-info/
+
+# Python Bytecode & Cache
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Sensitive Environment Configurations
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Logs & Debug Output
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Root junctions / symlinks
+scientific_engine
+XPert
+
+# Large Binary Model Archives (>100MB - exceeds GitHub file limit)
+*.zip
+scientific-engine/cell-response/XPert/saved_model/saved_model.zip
+
+# Build directories in packages
+REINVENT4/build/
+REINVENT4/dist/
+REINVENT4/*.egg-info/

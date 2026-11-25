@@ -1,0 +1,188 @@
+{
+  "audit_metadata": {
+    "title": "HumanMol AI - Stage 3 Scientific Integrity & Reproducibility Audit",
+    "timestamp": "2026-11-21T15:35:00Z",
+    "auditor": "HumanMol Scientific Verification Harness",
+    "target": {
+      "gene": "EGFR",
+      "uniprot": "P00533",
+      "organism": "Homo sapiens",
+      "mutation": "L858R",
+      "experimental_structure": "PDB 2ITZ",
+      "reference_ligand": "Gefitinib (IRE)"
+    },
+    "audited_pipeline_run_id": "run_egfr_l858r_stage3_20261121_092039",
+    "database": "sqlite:///./database/humanmol.db"
+  },
+  "audit_sections": {
+    "section_1_mpo_scoring_formula": {
+      "status": "PASS_WITH_CORRECTIONS",
+      "documented_formula": "MPO = clamp(0, 10, 5.0 + docking_bonus + ro5_bonus - ro5_penalty + logp_bonus - logp_penalty + tpsa_bonus - herg_penalty - dili_penalty - ames_penalty)",
+      "findings": [
+        {
+          "candidate_id": "HM-EGFR-012",
+          "base_score": 5.0,
+          "docking_contribution": 0.4063,
+          "ro5_contribution": 1.5,
+          "logp_contribution": 1.0,
+          "tpsa_contribution": 1.0,
+          "herg_penalty": 0.0,
+          "dili_penalty": 0.0,
+          "ames_penalty": 0.0,
+          "raw_sum": 8.9063,
+          "calculated_score": 8.91,
+          "stored_score": 8.91,
+          "delta": 0.0,
+          "status": "EXACT_MATCH"
+        },
+        {
+          "candidate_id": "HM-EGFR-004",
+          "base_score": 5.0,
+          "docking_contribution": 0.0,
+          "ro5_contribution": 1.5,
+          "logp_contribution": 1.0,
+          "tpsa_contribution": 1.0,
+          "herg_penalty": 0.0,
+          "dili_penalty": 0.0,
+          "ames_penalty": 0.0,
+          "raw_sum": 8.5,
+          "calculated_score": 8.5,
+          "stored_score": 8.5,
+          "delta": 0.0,
+          "status": "EXACT_MATCH"
+        },
+        {
+          "candidate_id": "HM-EGFR-011",
+          "base_score": 5.0,
+          "docking_contribution": 0.3322,
+          "ro5_contribution": 1.5,
+          "logp_contribution": 1.0,
+          "tpsa_contribution": 1.0,
+          "herg_penalty": 0.0,
+          "dili_penalty": 0.0,
+          "ames_penalty": 2.0,
+          "raw_sum": 6.8322,
+          "calculated_score": 6.83,
+          "stored_score": 6.83,
+          "reported_prompt_score": 8.3,
+          "delta_against_stored": 0.0,
+          "delta_against_prompt": -1.47,
+          "investigation": "Discrepancy explained: Candidate triggered an Ames mutagenicity probability penalty (Ames = 0.5037 > 0.50, penalty = -2.00). If Ames penalty is excluded, score is 8.83. The stored database value 6.83 is mathematically correct according to the implemented code.",
+          "status": "CODE_CONSISTENT_DOCUMENTATION_MISMATCH"
+        },
+        {
+          "candidate_id": "HM-EGFR-014",
+          "base_score": 5.0,
+          "docking_contribution": 0.0,
+          "ro5_contribution": 1.5,
+          "logp_contribution": 0.0,
+          "tpsa_contribution": 0.0,
+          "herg_penalty": 0.0,
+          "dili_penalty": 0.0,
+          "ames_penalty": 2.0,
+          "raw_sum": 4.5,
+          "calculated_score": 4.5,
+          "stored_score": 4.5,
+          "reported_prompt_score": 8.2,
+          "delta_against_stored": 0.0,
+          "delta_against_prompt": -3.7,
+          "investigation": "Discrepancy explained: Candidate has LogP = 4.14 (> 4.0, no LogP bonus), TPSA = 30.49 (< 40.0, no TPSA bonus), and Ames probability = 0.546 (> 0.50, triggering -2.00 penalty). The stored score 4.50 is mathematically exact. The 8.20 score in documentation was an unpenalized theoretical estimate.",
+          "status": "CODE_CONSISTENT_DOCUMENTATION_MISMATCH"
+        },
+        {
+          "candidate_id": "HM-EGFR-006",
+          "base_score": 5.0,
+          "docking_contribution": 0.8148,
+          "ro5_contribution": 1.5,
+          "logp_contribution": 1.0,
+          "tpsa_contribution": 1.0,
+          "herg_penalty": 0.0,
+          "dili_penalty": 1.5,
+          "ames_penalty": 2.0,
+          "raw_sum": 5.8148,
+          "calculated_score": 5.81,
+          "stored_score": 5.81,
+          "reported_prompt_score": 6.31,
+          "delta_against_stored": 0.0,
+          "delta_against_prompt": -0.5,
+          "investigation": "Discrepancy explained: Candidate triggered both DILI penalty (-1.50) and Ames penalty (-2.00). The 6.31 score documented previously assumed Ames penalty was -1.50 instead of -2.00. The stored database score 5.81 is mathematically exact.",
+          "status": "CODE_CONSISTENT_DOCUMENTATION_MISMATCH"
+        }
+      ]
+    },
+    "section_2_chemprop_endpoint": {
+      "status": "PASS",
+      "model_path": "scientific_engine/property_prediction/chemprop_test_model.pt",
+      "model_architecture": "Directed Message Passing Neural Network (MPNN)",
+      "chemprop_version": "v2.3.1",
+      "endpoint_name": "Octanol-Water Partition Coefficient Surrogate (LogP Benchmark)",
+      "normalization": "Z-score (mean=2.18, std=1.20)",
+      "prediction_units": "dimensionless partition ratio",
+      "labeling_compliance": "CONFIRMED: Output is strictly designated as a LogP computational surrogate benchmark and never labeled as EGFR IC50, Ki, or binding affinity."
+    },
+    "section_3_gefitinib_redocking_benchmark": {
+      "status": "PASS",
+      "receptor_file": "scientific-engine/docking/targets/2itz/benchmark/receptor.pdbqt",
+      "original_ligand_file": "scientific-engine/docking/targets/2itz/benchmark/original_ligand_prepared.pdbqt",
+      "redocked_modes_file": "scientific-engine/docking/targets/2itz/benchmark/redocked_modes.pdbqt",
+      "binding_pocket_center": [-51.654, -1.266, -21.945],
+      "grid_dimensions": [20.0, 20.0, 20.0],
+      "atom_mapping_error_angstrom": 0.0,
+      "mode_1_hinge_core_rmsd_angstrom": 0.4596,
+      "mode_1_all_heavy_cartesian_rmsd_angstrom": 2.6435,
+      "mode_1_all_heavy_symmetry_corrected_rmsd_angstrom": 2.115,
+      "mode_3_all_heavy_symmetry_corrected_rmsd_angstrom": 1.6782,
+      "best_affinity_kcal_mol": -8.356,
+      "clarification": "The 0.460 A RMSD corresponds strictly to the 21 heavy atoms of the quinazoline hinge-binding core against crystallographic coordinates. All-heavy atom RMSD is 2.644 A Cartesian and 2.115 A symmetry-corrected due to the solvent-exposed flexible morpholinopropoxy tail (10 heavy atoms)."
+    },
+    "section_4_admet_results": {
+      "status": "PASS",
+      "total_candidates": 49,
+      "profiled_count": 12,
+      "unprofiled_count": 37,
+      "coverage_rationale": "Top 12 prioritized drug-like candidates were submitted to ADMETlab 3.0 REST service to prevent rate limiting and server timeouts. The remaining 37 candidates are preserved as NOT_RUN with strictly NULL/None values without fabrication.",
+      "unprofiled_null_integrity": true,
+      "disclaimer": "All ADMET metrics represent in silico probability estimates and do not constitute confirmed clinical safety or toxicology."
+    },
+    "section_5_chemical_novelty_and_claims": {
+      "status": "PASS_WITH_RETRACTIONS",
+      "lead_candidate": {
+        "candidate_id": "HM-EGFR-012",
+        "canonical_smiles": "Nc1nc(-c2nccs2)cc2c1nc(C1(O)CCCC1)n2CCCO",
+        "molecular_formula": "C17H21N5O2S",
+        "molecular_weight": 359.46,
+        "logp": 2.28,
+        "tpsa": 110.08,
+        "hbd": 3,
+        "hba": 7,
+        "rotatable_bonds": 5,
+        "tanimoto_gefitinib": 0.098,
+        "tanimoto_erlotinib": 0.0761,
+        "tanimoto_osimertinib": 0.1308
+      },
+      "retractions": [
+        "RETRACTED: Unsupported claim that HM-EGFR-012 can overcome T790M or C797S resistance mutations based solely on low similarity to existing TKIs.",
+        "RETRACTED: Categorical claim of absolute structural novelty across all chemical space without exhaustive PubChem/ChEMBL patent searching.",
+        "AFFIRMED: HM-EGFR-012 is classified strictly as an unvalidated in silico computational hypothesis."
+      ]
+    },
+    "section_6_literature_and_chembl_provenance": {
+      "status": "PASS",
+      "pubmed_verified_count": 5,
+      "chembl_verified_assays": 8,
+      "target_chembl_id": "CHEMBL203",
+      "organism": "Homo sapiens",
+      "distinction_verified": "Target ChEMBL ID is distinct from Assay IDs (CHEMBL674637, CHEMBL621151, CHEMBL615325)."
+    },
+    "section_7_database_consistency": {
+      "status": "PASS",
+      "pipeline_run_record": "run_egfr_l858r_stage3_20261121_092039",
+      "molecules_count": 49,
+      "evaluations_count": 49,
+      "docking_results_count": 21,
+      "literature_records_count": 5,
+      "relational_integrity": "CONFIRMED: All foreign keys, candidate evaluations, and docking poses correctly link to their parent pipeline run and molecule records."
+    }
+  },
+  "overall_verdict": "VERIFIED_WITH_DOCUMENTATION_CORRECTIONS"
+}

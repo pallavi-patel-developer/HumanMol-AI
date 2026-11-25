@@ -1,0 +1,87 @@
+{
+  "experiment_id": "exp_2itz_20261120_131631_e967d96e",
+  "timestamp": "20261120_131631",
+  "target_pdb_id": "2ITZ",
+  "target_name": "EGFR L858R Kinase Domain (PDB: 2ITZ)",
+  "mutation": "L858R (Arg 858 verified)",
+  "ligand_smiles": "Cc1nc(Nc2ncc(s2)C(=O)Nc3c(C)cccc3Cl)cc(n1)N4CCN(CCO)CC4",
+  "status": "SUCCESS",
+  "best_affinity_kcal_mol": -8.304,
+  "num_modes": 9,
+  "modes": [
+    {
+      "mode": 1,
+      "affinity_kcal_mol": -8.304,
+      "rmsd_lb": 0.0,
+      "rmsd_ub": 0.0
+    },
+    {
+      "mode": 2,
+      "affinity_kcal_mol": -8.292,
+      "rmsd_lb": 1.166,
+      "rmsd_ub": 1.866
+    },
+    {
+      "mode": 3,
+      "affinity_kcal_mol": -8.096,
+      "rmsd_lb": 1.914,
+      "rmsd_ub": 2.466
+    },
+    {
+      "mode": 4,
+      "affinity_kcal_mol": -7.494,
+      "rmsd_lb": 3.187,
+      "rmsd_ub": 8.18
+    },
+    {
+      "mode": 5,
+      "affinity_kcal_mol": -7.372,
+      "rmsd_lb": 4.093,
+      "rmsd_ub": 9.699
+    },
+    {
+      "mode": 6,
+      "affinity_kcal_mol": -7.334,
+      "rmsd_lb": 3.91,
+      "rmsd_ub": 9.607
+    },
+    {
+      "mode": 7,
+      "affinity_kcal_mol": -7.248,
+      "rmsd_lb": 5.141,
+      "rmsd_ub": 8.688
+    },
+    {
+      "mode": 8,
+      "affinity_kcal_mol": -7.199,
+      "rmsd_lb": 3.993,
+      "rmsd_ub": 8.67
+    },
+    {
+      "mode": 9,
+      "affinity_kcal_mol": -7.177,
+      "rmsd_lb": 3.729,
+      "rmsd_ub": 9.704
+    }
+  ],
+  "exit_code": 0,
+  "command": "\"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\vina.exe\" --receptor \"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\targets\\2itz\\2itz_receptor.pdbqt\" --ligand \"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\experiments\\exp_2itz_20261120_131631_e967d96e\\ligand.pdbqt\" --center_x -51.654 --center_y -1.266 --center_z -21.945 --size_x 20.0 --size_y 20.0 --size_z 20.0 --out \"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\experiments\\exp_2itz_20261120_131631_e967d96e\\docked_out.pdbqt\" --exhaustiveness 8",
+  "vina_config": {
+    "center": [
+      -51.654,
+      -1.266,
+      -21.945
+    ],
+    "size": [
+      20.0,
+      20.0,
+      20.0
+    ],
+    "exhaustiveness": 8
+  },
+  "output_file": "D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\experiments\\exp_2itz_20261120_131631_e967d96e\\docked_out.pdbqt",
+  "receptor_sha256": "9786ece227e25cb08399259c68f47d49e02feefae321b41d6a195aac85714be2",
+  "ligand_sha256": "16afa5b8e6607597bbbca6cf647195d97d83cb4389d3e74ea2a7ab77ac1bf394",
+  "runtime_seconds": 24.64,
+  "is_benchmark": false
+}

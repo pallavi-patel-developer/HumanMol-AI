@@ -1,0 +1,29 @@
+{
+  "experiment_id": "exp_2itz_20261120_131251_f0ee8758",
+  "timestamp": "20261120_131251",
+  "target_pdb_id": "2ITZ",
+  "target_name": "EGFR L858R Kinase Domain (PDB: 2ITZ)",
+  "mutation": "L858R (Arg 858 verified)",
+  "ligand_smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+  "status": "FAILED",
+  "error_message": "Invalid grid box dimensions: size_x=0.0, size_y=0.0, size_z=0.0. All box sizes must be strictly positive (> 0 \u00c5).",
+  "exit_code": 2,
+  "command": "",
+  "vina_config": {
+    "center": [
+      -51.654,
+      -1.266,
+      -21.945
+    ],
+    "size": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "exhaustiveness": 1
+  },
+  "receptor_sha256": null,
+  "ligand_sha256": null,
+  "runtime_seconds": 0.07,
+  "is_benchmark": true
+}

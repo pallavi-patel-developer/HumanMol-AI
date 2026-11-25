@@ -1,0 +1,4 @@
+
+
+PDBQT parsing error: Atom type B is not a valid AutoDock type (atom types are case-sensitive).
+ > ATOM      5  B   UNL     1       1.321  -0.389   0.144  1.00  0.00    +0.496 B 

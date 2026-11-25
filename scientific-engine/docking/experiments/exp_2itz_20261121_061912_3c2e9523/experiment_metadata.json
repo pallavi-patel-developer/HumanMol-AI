@@ -1,0 +1,65 @@
+{
+  "experiment_id": "exp_2itz_20261121_061912_3c2e9523",
+  "timestamp": "20261121_061912",
+  "target_pdb_id": "2ITZ",
+  "target_name": "EGFR L858R Kinase Domain (PDB: 2ITZ)",
+  "mutation": "L858R (Arg 858 verified)",
+  "ligand_smiles": "COc1cc2ncnc(Nc3ccc(F)c(Cl)c3)c2cc1OCCCN1CCOCC1",
+  "status": "SUCCESS",
+  "best_affinity_kcal_mol": -8.116,
+  "num_modes": 5,
+  "modes": [
+    {
+      "mode": 1,
+      "affinity_kcal_mol": -8.116,
+      "rmsd_lb": 0.0,
+      "rmsd_ub": 0.0
+    },
+    {
+      "mode": 2,
+      "affinity_kcal_mol": -6.905,
+      "rmsd_lb": 2.129,
+      "rmsd_ub": 2.898
+    },
+    {
+      "mode": 3,
+      "affinity_kcal_mol": -6.789,
+      "rmsd_lb": 2.998,
+      "rmsd_ub": 6.094
+    },
+    {
+      "mode": 4,
+      "affinity_kcal_mol": -6.597,
+      "rmsd_lb": 4.187,
+      "rmsd_ub": 6.726
+    },
+    {
+      "mode": 5,
+      "affinity_kcal_mol": -6.459,
+      "rmsd_lb": 4.294,
+      "rmsd_ub": 6.968
+    }
+  ],
+  "exit_code": 0,
+  "command": "\"d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\vina.exe\" --receptor \"d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\targets\\2itz\\2itz_receptor.pdbqt\" --ligand \"d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\experiments\\exp_2itz_20261121_061912_3c2e9523\\ligand.pdbqt\" --center_x -51.654 --center_y -1.266 --center_z -21.945 --size_x 20.0 --size_y 20.0 --size_z 20.0 --out \"d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\experiments\\exp_2itz_20261121_061912_3c2e9523\\docked_out.pdbqt\" --exhaustiveness 1",
+  "vina_config": {
+    "center": [
+      -51.654,
+      -1.266,
+      -21.945
+    ],
+    "size": [
+      20.0,
+      20.0,
+      20.0
+    ],
+    "exhaustiveness": 1
+  },
+  "output_file": "d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\experiments\\exp_2itz_20261121_061912_3c2e9523\\docked_out.pdbqt",
+  "receptor_path": "d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\targets\\2itz\\2itz_receptor.pdbqt",
+  "ligand_path": "d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\experiments\\exp_2itz_20261121_061912_3c2e9523\\ligand.pdbqt",
+  "receptor_sha256": "9786ece227e25cb08399259c68f47d49e02feefae321b41d6a195aac85714be2",
+  "ligand_sha256": "1da1053f392370b612c6eb727222808be140804600ab32ff79d5eaec42cd4851",
+  "runtime_seconds": 14.429,
+  "is_benchmark": true
+}

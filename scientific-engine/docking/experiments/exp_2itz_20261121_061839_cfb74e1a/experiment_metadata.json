@@ -1,0 +1,53 @@
+{
+  "experiment_id": "exp_2itz_20261121_061839_cfb74e1a",
+  "timestamp": "20261121_061839",
+  "target_pdb_id": "2ITZ",
+  "target_name": "EGFR L858R Kinase Domain (PDB: 2ITZ)",
+  "mutation": "L858R (Arg 858 verified)",
+  "ligand_smiles": "Cc1ccc(Nc2ncnc3cc(NC(=O)C=C)c(OC4CCOC4)cc23)cc1",
+  "status": "SUCCESS",
+  "best_affinity_kcal_mol": -8.172,
+  "num_modes": 3,
+  "modes": [
+    {
+      "mode": 1,
+      "affinity_kcal_mol": -8.172,
+      "rmsd_lb": 0.0,
+      "rmsd_ub": 0.0
+    },
+    {
+      "mode": 2,
+      "affinity_kcal_mol": -7.903,
+      "rmsd_lb": 2.295,
+      "rmsd_ub": 4.6
+    },
+    {
+      "mode": 3,
+      "affinity_kcal_mol": -7.292,
+      "rmsd_lb": 2.388,
+      "rmsd_ub": 4.78
+    }
+  ],
+  "exit_code": 0,
+  "command": "\"d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\vina.exe\" --receptor \"d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\targets\\2itz\\2itz_receptor.pdbqt\" --ligand \"d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\experiments\\exp_2itz_20261121_061839_cfb74e1a\\ligand.pdbqt\" --center_x -51.654 --center_y -1.266 --center_z -21.945 --size_x 20.0 --size_y 20.0 --size_z 20.0 --out \"d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\experiments\\exp_2itz_20261121_061839_cfb74e1a\\docked_out.pdbqt\" --exhaustiveness 1",
+  "vina_config": {
+    "center": [
+      -51.654,
+      -1.266,
+      -21.945
+    ],
+    "size": [
+      20.0,
+      20.0,
+      20.0
+    ],
+    "exhaustiveness": 1
+  },
+  "output_file": "d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\experiments\\exp_2itz_20261121_061839_cfb74e1a\\docked_out.pdbqt",
+  "receptor_path": "d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\targets\\2itz\\2itz_receptor.pdbqt",
+  "ligand_path": "d:\\Vyomara\\Healthcare\\HumanMol AI\\scientific-engine\\docking\\experiments\\exp_2itz_20261121_061839_cfb74e1a\\ligand.pdbqt",
+  "receptor_sha256": "9786ece227e25cb08399259c68f47d49e02feefae321b41d6a195aac85714be2",
+  "ligand_sha256": "027a24326a73f96e28fd7e05bac31231a4600a4552512be81cdc792ffc9b3057",
+  "runtime_seconds": 7.919,
+  "is_benchmark": false
+}

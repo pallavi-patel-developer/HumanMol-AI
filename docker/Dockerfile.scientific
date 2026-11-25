@@ -1,0 +1,36 @@
+FROM continuumio/miniconda3:latest
+
+WORKDIR /app
+
+# Install system dependencies for scientific computation
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    git \
+    curl \
+    libxrender1 \
+    libxext6 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create scientific conda environment
+RUN conda create -n humanmol-scientific python=3.11 -y && \
+    conda install -n humanmol-scientific -c conda-forge \
+    rdkit \
+    openbabel \
+    vina \
+    boost-cpp \
+    -y && \
+    conda clean -afy
+
+# Activate conda environment by default
+ENV PATH=/opt/conda/envs/humanmol-scientific/bin:$PATH
+
+# Install remaining Python packages
+COPY XPert/requirements.txt /tmp/xpert-reqs.txt
+RUN pip install --no-cache-dir \
+    chemprop \
+    reactome2py \
+    unipressed \
+    chembl_webresource_client \
+    biopython
+
+CMD ["python", "-c", "import rdkit; print('HumanMol AI Scientific Engine Container Ready! RDKit:', rdkit.__version__)"]

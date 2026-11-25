@@ -1,0 +1,51 @@
+{
+  "experiment_id": "exp_1iep_20261120_131838_b6149907",
+  "timestamp": "20261120_131838",
+  "target_pdb_id": "1IEP",
+  "target_name": "c-Abl Kinase Domain (PDB: 1IEP)",
+  "mutation": "Wild-Type",
+  "ligand_smiles": "Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc4nccc(n4)c5cccnc5",
+  "status": "SUCCESS",
+  "best_affinity_kcal_mol": -12.862,
+  "num_modes": 3,
+  "modes": [
+    {
+      "mode": 1,
+      "affinity_kcal_mol": -12.862,
+      "rmsd_lb": 0.0,
+      "rmsd_ub": 0.0
+    },
+    {
+      "mode": 2,
+      "affinity_kcal_mol": -10.712,
+      "rmsd_lb": 3.767,
+      "rmsd_ub": 11.875
+    },
+    {
+      "mode": 3,
+      "affinity_kcal_mol": -10.391,
+      "rmsd_lb": 2.913,
+      "rmsd_ub": 12.256
+    }
+  ],
+  "exit_code": 0,
+  "command": "\"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\vina.exe\" --receptor \"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\1iep_receptor.pdbqt\" --ligand \"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\experiments\\exp_1iep_20261120_131838_b6149907\\ligand.pdbqt\" --center_x 15.6 --center_y 53.6 --center_z 15.4 --size_x 20.0 --size_y 20.0 --size_z 20.0 --out \"D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\experiments\\exp_1iep_20261120_131838_b6149907\\docked_out.pdbqt\" --exhaustiveness 8",
+  "vina_config": {
+    "center": [
+      15.6,
+      53.6,
+      15.4
+    ],
+    "size": [
+      20.0,
+      20.0,
+      20.0
+    ],
+    "exhaustiveness": 8
+  },
+  "output_file": "D:\\Vyomara\\Healthcare\\HumanMol AI\\scientific_engine\\docking\\experiments\\exp_1iep_20261120_131838_b6149907\\docked_out.pdbqt",
+  "receptor_sha256": "f13cf3b36f61d87c3b58983e0b8ecf1c3456a685eb86dfe9ccfb139c7bdc2586",
+  "ligand_sha256": "ea30244a3318619c39eb0e715113cb15c46c363272934fc1894a4b07c2ef27c4",
+  "runtime_seconds": 32.629,
+  "is_benchmark": false
+}

@@ -1,0 +1,20 @@
+# AutoDock Vina v1.2.7 Redocking Benchmark Configuration
+# Target: Human EGFR Kinase Domain L858R (PDB: 2ITZ)
+# Reference Ligand: Gefitinib (IRE)
+
+receptor = receptor.pdbqt
+ligand = original_ligand_prepared.pdbqt
+out = redocked_modes.pdbqt
+
+center_x = -51.654
+center_y = -1.266
+center_z = -21.945
+
+size_x = 20.0
+size_y = 20.0
+size_z = 20.0
+
+exhaustiveness = 16
+num_modes = 9
+energy_range = 3.0
+seed = 42

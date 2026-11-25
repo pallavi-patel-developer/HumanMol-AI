@@ -1,0 +1,118 @@
+All requested installations, Conda environments, repository configurations, and project directories have been completed according to your specified order and architecture.
+
+---
+
+### 1. Project Directory Structure
+
+The complete project structure has been established under `D:\Vyomara\Healthcare\HumanMol AI`:
+
+```
+HumanMol AI/
+│
+├── frontend/                     # Next.js + TypeScript
+│
+├── backend/                      # Node.js APIs
+│
+├── scientific-engine/
+│   ├── molecule-generator/       # REINVENT4 (linked)
+│   ├── chemistry/                # RDKit service (rdkit_service.py)
+│   ├── property-prediction/      # Chemprop service (chemprop_service.py)
+│   ├── admet/                    # ADMETlab 3.0 API client (admetlab_client.py)
+│   ├── protein-data/             # AlphaFold + RCSB PDB service (protein_service.py)
+│   ├── docking/                  # AutoDock Vina binary + docking runner (vina.exe, vina_docking.py)
+│   ├── cell-response/            # XPert repository (linked)
+│   ├── pathways/                 # Reactome service (reactome_service.py)
+│   ├── biological-data/          # UniProt & ChEMBL service (uniprot_chembl_service.py)
+│   └── research-evidence/        # PubMed / Entrez service (pubmed_service.py)
+│
+├── database/                     # Database schemas, migrations & configs
+├── workers/                      # Background job queues & celery/redis workers
+└── docker/                       # Dockerfile.scientific & docker-compose.yml
+```
+-----------------------------------------------------------------------------------------------
+scikit-learn (which provides the sklearn module) is
+ installed and verified in your environments:
+  
+In humanmol-xpert (Python 3.11): sklearn 1.9.1
+  
+In Base Python (Python 3.12): sklearn 1.9.1
+
+You can use it in your Python code via:
+  
+python
+import sklearn
+from sklearn.ensemble import RandomForestClassifier
+
+NOTE
+
+  On PyPI, the package name is scikit-learn (the legacy dummy package
+   pip install sklearn is deprecated by the scikit-learn team in
+    favor of pip install scikit-learn). Both the module import 
+    import sklearn and the CLI package scikit-learn are installed 
+    and ready.
+-----------------------------------------------------------------------------------------------
+---
+
+### 2. Installations Completed by Engine
+
+#### 1. Core Chemistry
+- **RDKit**: Installed (`rdkit-2026.03.5` / `rdkit-2026.9.2`)
+- **Chemprop**: Installed (`chemprop-2.3.1`)
+
+#### 2. Molecule Generation (`REINVENT4`)
+- **Repository**: Located at `d:\Vyomara\Healthcare\HumanMol AI\REINVENT4` and mapped to `scientific-engine/molecule-generator/REINVENT4`.
+- **Dependencies**: Installed via `python install.py cpu` (including `torch 2.13.0+cpu`, `torchvision`, `OpenEye-toolkits`, `iSIM`, `pumas`, `tensorboard`, `mmpdb`, `molvs`).
+
+#### 3. Molecular Interaction (`AutoDock Vina` + RCSB)
+- **AutoDock Vina**: AutoDock Vina v1.2.7 64-bit binaries (`vina.exe` and `vina_split.exe`) installed into:
+  - `scientific-engine/docking/`
+  - `C:\Users\hp\miniconda3\envs\humanmol-xpert\Scripts\` (available directly on `PATH`)
+- **RCSB / AlphaFold Service**: Configured in `scientific-engine/protein-data/protein_service.py`.
+
+#### 4. Biological Intelligence (`XPert` + Reactome + UniProt + ChEMBL)
+- **Conda Environment**: Created `humanmol-xpert` with **Python 3.11.18** at:
+  ```
+  C:\Users\hp\miniconda3\envs\humanmol-xpert
+  ```
+- **XPert Repository**: Cloned from `https://github.com/GSanShui/XPert.git` into `scientific-engine/cell-response/XPert` (with root junction at `XPert`).
+- **XPert Dependencies**: Installed `h5py`, `PyYAML`, `scikit-learn`, `torch`, `torch-geometric`, `torchmetrics`, `tqdm`, `scanpy`, `unimol-tools`, `dask`, `dask-expr`, `anndata`.
+- **reactome2py**: Installed (`v3.0.0`)
+- **unipressed**: Installed (`v1.4.0`)
+- **chembl_webresource_client**: Installed (`v0.10.9`)
+
+#### 5. Research & ADMET (`ADMETlab` + `Biopython / PubMed`)
+- **biopython**: Installed (`v1.88`) with NCBI Entrez interface in `scientific-engine/research-evidence/pubmed_service.py`.
+- **ADMETlab Client**: Configured in `scientific-engine/admet/admetlab_client.py`.
+
+---
+
+### 3. How to Activate and Run
+
+To activate the dedicated Python 3.11 environment in your terminal:
+
+```powershell
+conda activate humanmol-xpert
+```
+
+To test the engines:
+
+```powershell
+# 1. Test AutoDock Vina
+vina --help
+
+# 2. Test Biological Engines (UniProt, ChEMBL, Reactome, Biopython)
+python -c "import Bio, reactome2py, unipressed, chembl_webresource_client; print('Biological intelligence modules loaded!')"
+
+# 3. Test Machine Learning & Chemistry (PyTorch, PyG, Chemprop)
+python -c "import torch, chemprop, torch_geometric; print('PyTorch & Chemprop loaded!')"
+```
+
+> [!NOTE]
+> **Windows 11 Smart App Control (SAC) Note:**
+> Windows 11 Smart App Control was detected in evaluation/enforced mode. Some scientific C++ extension DLLs (such as RDKit C-extensions or `_xxhash`) may trigger `An Application Control policy has blocked this file` unless Smart App Control is toggled off in **Windows Security > App & browser control > Smart App Control**, or run inside **WSL2** / **Docker** using the provided `docker/docker-compose.yml`.
+
+cd "d:\Vyomara\Healthcare\HumanMol AI"
+C:\Users\hp\miniconda3\envs\humanmol-xpert\python.exe scientific-engine/main.py
+
+cd "d:\Vyomara\Healthcare\HumanMol AI\frontend"
+npm run dev

@@ -1,0 +1,13 @@
+{
+  "experiment_id": "exp_2itz_20261120_131149_60950794",
+  "timestamp": "20261120_131149",
+  "target_pdb_id": "2ITZ",
+  "target_name": "EGFR L858R Kinase Domain (PDB: 2ITZ)",
+  "mutation": "L858R (Arg 858 verified)",
+  "ligand_smiles": "NOT_A_VALID_SMILES_STRUCTURE_XYZ!!!",
+  "status": "FAILED",
+  "error_message": "RDKit could not parse SMILES 'NOT_A_VALID_SMILES_STRUCTURE_XYZ!!!'. Invalid chemical valence or syntax.",
+  "exit_code": 2,
+  "runtime_seconds": 0.005,
+  "is_benchmark": false
+}

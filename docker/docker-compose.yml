@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  scientific-engine:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.scientific
+    container_name: humanmol-scientific-engine
+    volumes:
+      - ../scientific-engine:/app/scientific-engine
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
